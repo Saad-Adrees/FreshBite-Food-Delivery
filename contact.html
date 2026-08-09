@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — FreshBite | Get in Touch</title>
+  <meta name="description"
+    content="Contact FreshBite for inquiries, catering requests, or support. We're here to help 24/7." />
+  <meta name="keywords" content="contact freshbite, customer support, catering inquiry, food delivery help" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact FreshBite — We're Here to Help" />
+  <meta property="og:description" content="Reach out to us for any questions, catering requests, or support." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact FreshBite",
+    "description": "Contact information and form for FreshBite food delivery.",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "FreshBite",
+      "telephone": "+1-234-567-890",
+      "email": "hello@freshbite.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Culinary Ave",
+        "addressLocality": "Food City",
+        "addressRegion": "FC",
+        "postalCode": "12345",
+        "addressCountry": "US"
+      }
+    }
+  }
+  </script>
+
+  <style>
+    .page-header {
+      padding: 140px 1.5rem 80px;
+      background: linear-gradient(135deg, #fef6ef 0%, #fff 50%, #fdf3eb 100%);
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 0.5rem;
+    }
+
+    .page-header p {
+      color: #475569;
+      /* Medium-dark slate gray for great contrast */
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.6;
+      font-size: 1.05rem;
+    }
+
+    /* Contact Info Cards */
+    .contact-info-section {
+      padding: 3rem 1.5rem;
+      background: var(--color-bg);
+    }
+
+    .contact-info-grid {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      transform: translateY(-40px);
+    }
+
+    .contact-info-card {
+      background: var(--color-bg-elevated);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      border: 1px solid var(--color-border);
+      text-align: center;
+      transition: all var(--transition-base);
+      box-shadow: var(--shadow-md);
+    }
+
+    .contact-info-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
+      border-color: rgba(249, 115, 22, 0.2);
+    }
+
+    .contact-info-card .icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 1.3rem;
+    }
+
+    .contact-info-card h4 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-info-card p {
+      font-size: 0.88rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+
+    .contact-info-card a {
+      color: var(--color-primary);
+      font-weight: 600;
+      transition: color var(--transition-fast);
+    }
+
+    .contact-info-card a:hover {
+      color: var(--color-primary-dark);
+    }
+
+    /* Contact Form & Hours */
+    .contact-main-section {
+      padding: 2rem 1.5rem 5rem;
+      background: var(--color-bg);
+    }
+
+    .contact-main-grid {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .contact-box {
+      background: var(--color-bg-elevated);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem;
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-box h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-box form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .submit-btn {
+      align-self: flex-start;
+    }
+
+    /* Hours & Map */
+    .hours-card {
+      background: var(--color-bg-elevated);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1.5rem;
+    }
+
+    .hours-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .hours-table {
+      width: 100%;
+    }
+
+    .hours-table tr {
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .hours-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .hours-table td {
+      padding: 0.6rem 0;
+      font-size: 0.88rem;
+    }
+
+    .hours-table td:first-child {
+      color: var(--color-text-secondary);
+    }
+
+    .hours-table td:last-child {
+      text-align: right;
+      font-weight: 600;
+    }
+
+    .hours-table .today {
+      color: var(--color-primary);
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--color-success-bg);
+      color: var(--color-success);
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .status-badge.closed {
+      background: var(--color-error-bg);
+      color: var(--color-error);
+    }
+
+    .status-badge i {
+      font-size: 0.5rem;
+    }
+
+    .map-container {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      height: 300px;
+      background: var(--color-surface);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* FAQ */
+    .faq-section {
+      padding: 5rem 1.5rem;
+      background: var(--color-bg-alt);
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--color-bg-elevated);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      margin-bottom: 1rem;
+      overflow: hidden;
+      transition: all var(--transition-fast);
+    }
+
+    .faq-item:hover {
+      border-color: rgba(249, 115, 22, 0.2);
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-align: left;
+      color: var(--color-text);
+      transition: color var(--transition-fast);
+    }
+
+    .faq-question:hover {
+      color: var(--color-primary);
+    }
+
+    .faq-question i {
+      transition: transform var(--transition-fast);
+      color: var(--color-text-muted);
+    }
+
+    .faq-item.open .faq-question i {
+      transform: rotate(180deg);
+      color: var(--color-primary);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height var(--transition-slow), padding var(--transition-base);
+      padding: 0 1.25rem;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding: 0 1.25rem 1.25rem;
+    }
+
+    .faq-answer p {
+      font-size: 0.88rem;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+
+    /* Live Chat Widget Placeholder */
+    .chat-widget {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: var(--shadow-lg);
+      cursor: pointer;
+      transition: all var(--transition-base);
+      z-index: 998;
+      animation: chatPulse 2s infinite;
+    }
+
+    @keyframes chatPulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4);
+      }
+
+      50% {
+        box-shadow: 0 0 0 12px rgba(249, 115, 22, 0);
+      }
+    }
+
+    .chat-widget:hover {
+      transform: scale(1.1);
+      background: var(--color-primary-dark);
+    }
+
+    @media (max-width: 1024px) {
+      .contact-main-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-info-grid {
+        transform: translateY(-20px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-box {
+        padding: 1.5rem;
+      }
+
+      .chat-widget {
+        bottom: 1rem;
+        right: 1rem;
+        width: 48px;
+        height: 48px;
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+  <base target="_blank">
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="FreshBite Home">
+        <span class="logo-icon"><i class="fas fa-utensils"></i></span>
+        Fresh<span>Bite</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li>
+          <button class="nav-cart-btn" id="cartOpenBtn" aria-label="Open cart">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-badge" id="cartBadge" style="display:none;">0</span>
+          </button>
+        </li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="#" class="cart-mobile-btn" id="cartMobileBtn"><i class="fas fa-shopping-bag"></i> View Cart</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="page-header">
+      <div class="reveal">
+        <span class="section-label">Get In Touch</span>
+        <h1>We'd Love to <span class="text-gradient">Hear From You</span></h1>
+        <p>Have a question, feedback, or special request? Our team is here to help you 24/7.</p>
+      </div>
+    </section>
+
+    <!-- Contact Info Cards -->
+    <section class="contact-info-section">
+      <div class="contact-info-grid">
+        <div class="contact-info-card reveal">
+          <div class="icon" style="background: var(--color-primary-light); color: var(--color-primary);">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <h4>Call Us</h4>
+          <p>Mon-Sun, 10am - 11pm<br><a href="tel:+1234567890">+1 (234) 567-890</a></p>
+        </div>
+        <div class="contact-info-card reveal">
+          <div class="icon" style="background: var(--color-info-bg); color: var(--color-info);">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h4>Email Us</h4>
+          <p>We reply within 24 hours<br><a href="mailto:hello@freshbite.com">hello@freshbite.com</a></p>
+        </div>
+        <div class="contact-info-card reveal">
+          <div class="icon" style="background: var(--color-success-bg); color: var(--color-success);">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h4>Visit Us</h4>
+          <p>123 Culinary Ave<br>Food City, FC 12345</p>
+        </div>
+        <div class="contact-info-card reveal">
+          <div class="icon" style="background: var(--color-error-bg); color: var(--color-error);">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h4>Live Chat</h4>
+          <p>Available 24/7<br><a href="#"
+              onclick="window.Toast.info('Live chat coming soon!', {title:'Coming Soon'}); return false;">Start Chat</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form & Hours -->
+    <section class="contact-main-section">
+      <div class="contact-main-grid">
+        <div class="contact-box reveal">
+          <h3><i class="fas fa-paper-plane" style="color:var(--color-primary);"></i> Send Us a Message</h3>
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" placeholder="e.g. John Doe" autocomplete="name" />
+                <div class="form-error" id="nameError"><i class="fas fa-exclamation-circle"></i> Full name is required
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" placeholder="e.g. john@example.com" autocomplete="email" />
+                <div class="form-error" id="emailError"><i class="fas fa-exclamation-circle"></i> Enter a valid email
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Contact Number</label>
+                <input type="tel" id="phone" placeholder="e.g. +1 234-567-890" autocomplete="tel" />
+                <div class="form-error" id="phoneError"><i class="fas fa-exclamation-circle"></i> Enter a valid phone
+                  number</div>
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject">
+                  <option value="">Select a topic</option>
+                  <option value="order">Order Inquiry</option>
+                  <option value="catering">Catering Request</option>
+                  <option value="feedback">Feedback</option>
+                  <option value="partnership">Partnership</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message *</label>
+              <textarea id="message" rows="4"
+                placeholder="Tell us about your event, order issue, or any questions..."></textarea>
+              <div class="form-error" id="messageError"><i class="fas fa-exclamation-circle"></i> Message is required
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary submit-btn" id="submitBtn">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+          <div
+            style="margin-top:1.5rem; padding-top:1.5rem; border-top:1px solid var(--color-border); display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between; align-items:center;">
+            <span style="font-size:0.75rem; color:var(--color-text-muted);"><i class="fas fa-shield-alt"
+                style="color:var(--color-success);"></i> Your data is secure & encrypted</span>
+            <span style="font-size:0.75rem; color:var(--color-text-muted);">Avg. response time: <strong
+                style="color:var(--color-primary);">2 hours</strong></span>
+          </div>
+        </div>
+
+        <div>
+          <div class="hours-card reveal">
+            <h3><i class="fas fa-clock" style="color:var(--color-primary);"></i> Opening Hours</h3>
+            <div class="status-badge" id="statusBadge"><i class="fas fa-circle"></i> <span>Open Now</span></div>
+            <table class="hours-table">
+              <tr>
+                <td>Monday</td>
+                <td>10:00 AM - 11:00 PM</td>
+              </tr>
+              <tr>
+                <td>Tuesday</td>
+                <td>10:00 AM - 11:00 PM</td>
+              </tr>
+              <tr>
+                <td>Wednesday</td>
+                <td>10:00 AM - 11:00 PM</td>
+              </tr>
+              <tr>
+                <td>Thursday</td>
+                <td>10:00 AM - 11:00 PM</td>
+              </tr>
+              <tr>
+                <td>Friday</td>
+                <td>10:00 AM - 12:00 AM</td>
+              </tr>
+              <tr>
+                <td>Saturday</td>
+                <td>09:00 AM - 12:00 AM</td>
+              </tr>
+              <tr>
+                <td>Sunday</td>
+                <td>09:00 AM - 11:00 PM</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="map-container reveal">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2!2d-73.98!3d40.75!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ1JzAwLjAiTiA3M8KwNTgnNDguMCJX!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus"
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              title="FreshBite Location Map"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+      <div class="section-header reveal">
+        <span class="section-label">Help Center</span>
+        <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+        <p class="section-desc">Find quick answers to common questions about ordering, delivery, and more.</p>
+      </div>
+      <div class="faq-container">
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            <span>What is your delivery radius?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>We currently deliver within a 10-mile radius of our kitchen locations. Enter your address at checkout to
+              confirm we deliver to your area. We're constantly expanding our coverage!</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            <span>How do I track my order?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Once your order is confirmed, you'll receive a tracking link via email and SMS. You can also track your
+              order in real-time through our website. Our drivers update their location every 30 seconds.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can I schedule an order in advance?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! You can schedule orders up to 7 days in advance. Simply select your preferred delivery date and time
+              at checkout. Perfect for planning office lunches, parties, or special occasions.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            <span>What if I have food allergies?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Your safety is our priority. Every menu item lists common allergens. You can also add special dietary
+              instructions when ordering. Our kitchens follow strict protocols to prevent cross-contamination.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            <span>Do you offer corporate catering?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely! We offer customized catering packages for businesses of all sizes. Contact us with your
+              requirements and we'll create a tailored menu. Bulk orders receive special pricing and dedicated support.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            <span>What is your refund policy?</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>If you're not satisfied with your order, contact us within 30 minutes of delivery. We'll either replace
+              your meal or issue a full refund. Your satisfaction is 100% guaranteed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="color:#fff;">
+          <span class="logo-icon"><i class="fas fa-utensils"></i></span>
+          Fresh<span>Bite</span>
+        </a>
+        <p>Delivering happiness, one meal at a time. From our kitchen to your door with love, care, and the freshest
+          ingredients.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div>
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Support</h5>
+        <ul>
+          <li><a href="contact.html#faq">FAQ</a></li>
+          <li><a href="contact.html">Delivery Info</a></li>
+          <!-- Line 685 -->
+          <li><a href="privacy.html">Privacy Policy</a></li>
+
+          <!-- Line 686 -->
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:+1234567890"><i class="fas fa-phone"></i> +1 (234) 567-890</a></li>
+          <li><a href="mailto:hello@freshbite.com"><i class="fas fa-envelope"></i> hello@freshbite.com</a></li>
+          <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Culinary Ave, Food City</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 FreshBite Food Delivery. All Rights Reserved.<br />
+      Made with <i class="fas fa-heart" aria-hidden="true"></i> for food lovers.
+    </div>
+  </footer>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+  <div class="cart-sidebar" id="cartSidebar" role="dialog" aria-label="Shopping cart">
+    <div class="cart-header">
+      <h3>Your Cart <small id="cartItemCount">(0 items)</small></h3>
+      <button class="cart-close" id="cartCloseBtn" aria-label="Close cart"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <i class="fas fa-shopping-bag" aria-hidden="true"></i>
+        <p>Your cart is empty</p>
+        <small>Start adding some delicious items!</small>
+        <button class="browse-btn" id="browseBtn">Browse Menu <i class="fas fa-arrow-right"></i></button>
+      </div>
+      <div id="cartList"></div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="totals">
+        <div class="row"><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+        <div class="row"><span>Delivery Fee</span><span id="deliveryFee">$0.00</span></div>
+        <div class="row"><span>Tax (8%)</span><span id="tax">$0.00</span></div>
+        <div class="row total"><span>Total</span><span id="total">$0.00</span></div>
+      </div>
+      <div class="savings" id="cartSavings" style="display:none;"></div>
+      <button class="checkout-btn" id="checkoutBtn"><i class="fas fa-lock"></i> Proceed to Checkout</button>
+      <div class="checkout-msg" id="checkoutMsg">🎉 Order placed! Thank you for choosing FreshBite.</div>
+    </div>
+  </div>
+
+  <!-- Live Chat Widget -->
+  <button class="chat-widget" id="chatWidget" aria-label="Open live chat">
+    <i class="fas fa-comment-dots"></i>
+  </button>
+
+  <script src="main.js"></script>
+  <script>
+    // Contact Form Validation & Submission
+    const contactForm = document.getElementById('contactForm');
+    const fullName = document.getElementById('fullName');
+    const email = document.getElementById('email');
+    const phone = document.getElementById('phone');
+    const message = document.getElementById('message');
+    const submitBtn = document.getElementById('submitBtn');
+
+    function showError(id, msg) {
+      const err = document.getElementById(id);
+      if (err) { err.innerHTML = `<i class="fas fa-exclamation-circle"></i> ${msg}`; err.classList.add('show'); }
+    }
+    function hideError(id) {
+      const err = document.getElementById(id);
+      if (err) err.classList.remove('show');
+    }
+
+    contactForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let valid = true;
+
+      if (!fullName.value.trim()) { showError('nameError', 'Full name is required'); valid = false; }
+      else { hideError('nameError'); }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email.value.trim() || !emailRegex.test(email.value.trim())) { showError('emailError', 'Enter a valid email'); valid = false; }
+      else { hideError('emailError'); }
+
+      const phoneRegex = /^[\+\d\s\-\(\)]{7,20}$/;
+      if (phone.value.trim() && !phoneRegex.test(phone.value.trim())) { showError('phoneError', 'Enter a valid phone number'); valid = false; }
+      else { hideError('phoneError'); }
+
+      if (!message.value.trim()) { showError('messageError', 'Message is required'); valid = false; }
+      else { hideError('messageError'); }
+
+      if (!valid) {
+        window.Toast?.error('Please fix the errors in the form.', { title: 'Validation Error' });
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+      setTimeout(() => {
+        submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+        submitBtn.style.background = 'var(--color-success)';
+        window.Toast?.success('We\'ll get back to you within 2 hours!', { title: 'Message Sent' });
+        contactForm.reset();
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+          submitBtn.style.background = '';
+        }, 3000);
+      }, 1500);
+    });
+
+    // Clear errors on input
+    [fullName, email, phone, message].forEach(el => {
+      el?.addEventListener('input', () => {
+        const errorId = el.id + 'Error';
+        hideError(errorId);
+      });
+    });
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('open');
+
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+
+        // Open clicked if was closed
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Live Chat Widget
+    document.getElementById('chatWidget')?.addEventListener('click', () => {
+      window.Toast.info('Live chat will be available soon! For now, please email us at hello@freshbite.com', {
+        title: 'Coming Soon',
+        duration: 5000
+      });
+    });
+
+    // Opening Hours Status
+    function updateStatus() {
+      const now = new Date();
+      const day = now.getDay();
+      const hour = now.getHours();
+      let open = false;
+
+      // Simple logic: 9-12 weekends, 10-11 weekdays (Fri/Sat until 12)
+      if (day === 0 || day === 6) { // Weekend
+        open = hour >= 9 && hour < 24;
+      } else if (day === 5) { // Friday
+        open = hour >= 10 && hour < 24;
+      } else {
+        open = hour >= 10 && hour < 23;
+      }
+
+      const badge = document.getElementById('statusBadge');
+      if (badge) {
+        if (open) {
+          badge.classList.remove('closed');
+          badge.innerHTML = '<i class="fas fa-circle"></i> <span>Open Now</span>';
+        } else {
+          badge.classList.add('closed');
+          badge.innerHTML = '<i class="fas fa-circle"></i> <span>Closed Now</span>';
+        }
+      }
+
+      // Highlight today in hours table
+      const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      const todayName = days[day];
+      document.querySelectorAll('.hours-table tr').forEach(row => {
+        const dayCell = row.querySelector('td:first-child');
+        if (dayCell && dayCell.textContent.includes(todayName)) {
+          dayCell.classList.add('today');
+          row.style.fontWeight = '700';
+        }
+      });
+    }
+    updateStatus();
+  </script>
+</body>
+
+</html>
